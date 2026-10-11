@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "specta"
+version = "0.1.0"
+description = "Specta - 面向 Vibe Coding 的本地开发运行台（进程托管 + 多路日志看板 + MCP）"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+dependencies = [
+    "PySide6-Essentials>=6.9.3,<6.10",
+    "pyte>=0.8.2,<0.9",
+    "mcp>=2.3.0,<3",
+    "psutil>=6.0.0",
+    "pywin32>=306; sys_platform == 'win32'",
+    "regex>=2024.5.15",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+specta = "specta.daemon_main:main"
+specta-bridge = "specta.bridge_main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"specta.ui" = ["assets/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "windows: 仅在 Windows 上运行的测试",
+    "slow: 慢速集成测试",
+]

@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# 虚拟环境
+.venv/
+venv/
+
+# 测试与检查缓存
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# 审查/回归测试临时工作区
+.review/
+.review-*/
+
+# AI 工具工作区
+.workbuddy/
+
+# 内部开发文档与测试（不上传，仅本地保留）
+docs/
+tests/
+Specta 开发设计与交付规格.md
+Specta 模块与类职责设计.md
+Vibe-Pulse 架构决策记录.md
+日志看板与MCP运行时架构设计.md
+
+# OS / 编辑器
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
